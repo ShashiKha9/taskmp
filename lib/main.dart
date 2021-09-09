@@ -3,8 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
+import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 
 void main() {
   runApp( MaterialApp(
@@ -15,38 +14,78 @@ class Profile extends StatefulWidget{
 }
 
 class ProfileState extends State <Profile> {
-  int pageindex = 0;
+  int _bottomNavIndex = 0;
 
   // This widget is the root of your application.
-  onTabTapped( index) {
+  int currentIndex = 0;
+
+  setBottomBarIndex(index) {
     setState(() {
-
-      pageindex = index;
-
+      currentIndex = index;
     });
   }
   @override
+
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
+
+    var List = [Icons.home,Icons.camera_alt,Icons.arrow_forward,Icons.camera,];
     return Scaffold(
-      bottomNavigationBar: PersistentBottomNavBar(
-      navBarStyle: NavBarStyle.style15,
 
-      ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // bottomNavigationBar: AnimatedBottomNavigationBar.builder(
+      //   itemCount: List.length,
+      //   tabBuilder: (int index, bool isActive) {
+      //     final color = isActive ? Color(0xffFFA400) : Colors.white;
+      //     return Column(
+      //       mainAxisSize: MainAxisSize.min,
+      //       mainAxisAlignment: MainAxisAlignment.center,
+      //       children: [
+      //         Icon(
+      //           List[index],
+      //           size: 24,
+      //           color: color,
+      //         ),
+      //         const SizedBox(height: 4),
+      //         Padding(
+      //           padding: const EdgeInsets.symmetric(horizontal: 8),
+      //           child: Text(
+      //             "brightness $index",
+      //             maxLines: 1,
+      //             style: TextStyle(color: color),
+      //
+      //
+      //           ),
+      //         ),
+      //
+      //
+      //
+      //       ],
+      //     );
+      //   },
+      //   backgroundColor: Color(0xff373A36),
+      //   activeIndex: _bottomNavIndex,
+      //   splashColor: Color(0xffFFA400),
+      //   // notchAndCornersAnimation: animation,
+      //   splashSpeedInMilliseconds: 300,
+      //   notchSmoothness: NotchSmoothness.defaultEdge,
+      //   gapLocation: GapLocation.center,
+      //   leftCornerRadius: 32,
+      //   rightCornerRadius: 32,
+      //   onTap: (index) => setState(() => _bottomNavIndex = index),
+      // ),
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
 
 
-    //     items: [
-    // Icon(CupertinoIcons.map_pin_ellipse,size: 30,semanticLabel:"suhf",),
-    //       Icon(Icons.shopping_cart,size: 30,color: Colors.white,),
-    //       Icon(Icons.star,size: 30,),
-    //  Icon(Icons.person),
-    //   ],
-    //     onTap: (index) {
-    //       setState() {
-    //         pageindex = index;
-    //       }
-    //     }
-    //   ),
-      body: Column(
+      body:
+      Stack(
         children: [
           Container(
             decoration: BoxDecoration(
@@ -78,6 +117,7 @@ class ProfileState extends State <Profile> {
             
             
           ),
+
 
           SizedBox(
             height: 18,
@@ -153,6 +193,78 @@ class ProfileState extends State <Profile> {
               trailing: Icon(Icons.arrow_forward_ios,size: 17,),
             ),
           ),
+          Stack(
+            children: [
+              Positioned(
+                bottom: 0,
+                left: 0,
+                child: Container(
+                  width: size.width,
+                  height: 80,
+                  child: Stack(
+                    overflow: Overflow.visible,
+                    children: [
+                      CustomPaint(
+                        size: Size(size.width, 80),
+                        painter: BNBCustomPainter(),
+                      ),
+                      Center(
+                        heightFactor: 0.6,
+                        child: FloatingActionButton(backgroundColor: Colors.orange, child: Icon(Icons.shopping_basket), elevation: 0.1, onPressed: () {}),
+                      ),
+                      Container(
+                        width: size.width,
+                        height: 80,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            IconButton(
+                              icon: Icon(
+                                Icons.home,
+                                color: currentIndex == 0 ? Colors.orange : Colors.grey.shade400,
+                              ),
+                              onPressed: () {
+                                setBottomBarIndex(0);
+                              },
+                              splashColor: Colors.white,
+                            ),
+                            IconButton(
+                                icon: Icon(
+                                  Icons.restaurant_menu,
+                                  color: currentIndex == 1 ? Colors.orange : Colors.grey.shade400,
+
+                                ),
+                                onPressed: () {
+                                  setBottomBarIndex(1);
+                                }),
+                            Container(
+                              width: size.width * 0.20,
+                            ),
+                            IconButton(
+                                icon: Icon(
+                                  Icons.bookmark,
+                                  color: currentIndex == 2 ? Colors.orange : Colors.grey.shade400,
+                                ),
+                                onPressed: () {
+                                  setBottomBarIndex(2);
+                                }),
+                            IconButton(
+                                icon: Icon(
+                                  Icons.notifications,
+                                  color: currentIndex == 3 ? Colors.orange : Colors.grey.shade400,
+                                ),
+                                onPressed: () {
+                                  setBottomBarIndex(3);
+                                }),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              )
+            ],
+          )
 
 
 
@@ -163,6 +275,34 @@ class ProfileState extends State <Profile> {
 
     );
     
+  }
+}
+
+class BNBCustomPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    Paint paint = new Paint()
+      ..color = Colors.white
+      ..style = PaintingStyle.fill;
+
+    Path path = Path();
+    path.moveTo(0, 0); // Start
+    path.quadraticBezierTo(size.width * 0.0, 0, size.width * 0.0, 0);
+    path.quadraticBezierTo(size.width * 0.0, 0, size.width * 0.0, 0);
+    path.arcToPoint(Offset(size.width * 0.60, 20), radius: Radius.circular(10.0), clockwise: false);
+    path.quadraticBezierTo(size.width * 0.30, 20, size.width * 0.65, 0);
+    path.quadraticBezierTo(size.width * 0.80, 0, size.width, 20);
+    path.lineTo(size.width, size.height);
+    path.lineTo(0, size.height);
+    path.close();
+    path.lineTo(0, 0);
+    canvas.drawShadow(path, Colors.black, 5, true);
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return false;
   }
 }
 
