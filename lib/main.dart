@@ -7,6 +7,7 @@ import 'package:flutter/rendering.dart';
 
 void main() {
   runApp( MaterialApp(
+    debugShowCheckedModeBanner: false,
       home:Profile()));
 }
 class Profile extends StatefulWidget{
@@ -141,19 +142,20 @@ body:SingleChildScrollView(
                        top: 100.0,
                          child: Container(
                        height: 150,
-                       width: 320,
+                       width: 340,
                            child: Card(
                              shape: RoundedRectangleBorder(
                                borderRadius: BorderRadius.circular(8)
                              ),
-                             child: Stack(
+
+                                child: Stack(
                                children: [
                                 Positioned(
                                   left: 13.0,
                                top: 20.0,
                                child: CircleAvatar(
 
-                                  radius: 35,
+                                  radius: 32,
                                   backgroundImage: NetworkImage("https://www.nicepng.com/png/detail/780-7805650_generic-user-image-male-man-cartoon-no-eyes.png"),
                                 )
                                 ),
@@ -162,8 +164,14 @@ body:SingleChildScrollView(
                                      top: 35,
                                      child: Column(
                                        children: [
-                                         Text("  Recardo McDonald",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 16),),
-                                         Text("jeetebe@gmail.com",style: TextStyle(fontSize: 14),),
+                                         Wrap(
+                                           children: [
+                                             Text("Recardo McDonald",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 16),),
+                                             Icon(Icons.check_circle,color: Colors.lightGreenAccent,)
+                                           ],
+                                         ),
+
+                                         Text("jeetebe@gmail.com        ",style: TextStyle(fontSize: 14),),
 
                                        ],
                                      ),
@@ -185,10 +193,23 @@ body:SingleChildScrollView(
 
                                ],
 
+
                              ),
 
 
-                           ),
+
+
+                         ),
+
+
+
+
+
+
+
+
+
+
 
                      )),
 
@@ -215,7 +236,7 @@ body:SingleChildScrollView(
                   ),
 
                           SizedBox(
-                            height: 18,
+                            height: 20,
                           ),
                           Positioned(
                     bottom: 0,
