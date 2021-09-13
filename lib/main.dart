@@ -13,8 +13,6 @@ class Profile extends StatefulWidget{
 }
 
 class ProfileState extends State <Profile> {
-  int _bottomNavIndex = 0;
-
   // This widget is the root of your application.
   int currentIndex = 0;
 
@@ -33,7 +31,9 @@ class ProfileState extends State <Profile> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color(0xfffc0366),
         onPressed: (){
-
+setState(() {
+  currentIndex=0;
+});
         },
         child: Icon(Icons.shopping_cart),
       ),
@@ -51,41 +51,48 @@ child: Container(
 
           child: Column(
         children: [
-          Icon(Icons.home,color: Colors.grey,),
-          Text("Home",style: TextStyle(color: Colors.grey),)
+          Icon(Icons.home,color:  currentIndex == 0 ?Color(0xfffc0366): Colors.grey,),
+          Text("Home",style: TextStyle(color: currentIndex == 0 ?Color(0xfffc0366): Colors.grey,),)
         ],
       )),
       FlatButton(onPressed: (){
+        setState(() {
+          currentIndex= 1;
+        });
 
       },
-          padding: EdgeInsets.all(10),
+          padding: EdgeInsets.only(right: 14,top: 10),
 
           child: Column(
             children: [
-              Icon(Icons.navigation_rounded,color: Colors.grey,),
-              Text("Discovery",style: TextStyle(color: Colors.grey),)
+              Icon(Icons.navigation_rounded,color: currentIndex == 1 ?Color(0xfffc0366): Colors.grey,),
+              Text("Discovery",style: TextStyle(color: currentIndex == 1 ?Color(0xfffc0366): Colors.grey,),)
             ],
           )),
       FlatButton(onPressed: (){
-
+setState(() {
+  currentIndex=2;
+});
       },
 
 padding: EdgeInsets.only(left: 24,top: 10),
           child: Column(
             children: [
-              Icon(Icons.star,color: Colors.grey,),
-              Text("Favorite",style: TextStyle(color: Colors.grey),)
+              Icon(Icons.star,color: currentIndex == 2 ?Color(0xfffc0366): Colors.grey,),
+              Text("Favorite",style: TextStyle(color: currentIndex == 2 ?Color(0xfffc0366): Colors.grey,),)
             ],
           )),
       FlatButton(onPressed: (){
-
+setState(() {
+  currentIndex= 3;
+});
       },
           padding: EdgeInsets.all(10.0),
 
           child: Column(
             children: [
-              Icon(Icons.person,color: Colors.grey,),
-              Text("Profile",style: TextStyle(color: Colors.grey),)
+              Icon(Icons.person,color: currentIndex == 3 ? Color(0xfffc0366): Colors.grey,),
+              Text("Profile",style: TextStyle(color: currentIndex == 3 ?Color(0xfffc0366): Colors.grey,),)
             ],
           )),
 
