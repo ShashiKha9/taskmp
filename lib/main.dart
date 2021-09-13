@@ -112,10 +112,13 @@ setState(() {
 
 
 
-
-  body:Container(
-      height: 700,
-                child: Container(
+body:SingleChildScrollView(
+  child:Container(
+      height: 630,
+                child: Column(
+                  children: [
+               SizedBox(
+                  height: 250,
                  child:   Stack(
                   alignment: Alignment.topCenter,
                    children: [
@@ -188,13 +191,8 @@ setState(() {
                            ),
 
                      )),
-                     Positioned(
-                       top: 40.0,
-                         child: Card(
-                           child:ExpansionTile(title: Text("lifhuehfu"),
-                           subtitle: Text("whduudiu"),)
-                         )
-                     )
+
+                     
 
 
 
@@ -216,7 +214,87 @@ setState(() {
 
                   ),
 
-    
+                          SizedBox(
+                            height: 18,
+                          ),
+                          Positioned(
+                    bottom: 0,
+                        right: 0,
+                        child:  Card(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(topLeft: Radius.circular(8),topRight: Radius.circular(8))
+                            ),
+                            margin: EdgeInsets.symmetric(horizontal: 13),
+                            child: ExpansionTile(
+                              title: Text("Payment cards",style: TextStyle(fontWeight: FontWeight.w700),),
+                              subtitle: Text("Add a credit or debit card",style: TextStyle(color: Colors.grey[700]),),
+                              trailing: Icon(Icons.arrow_forward_ios,size: 17,),
+                            ),
+                          ),
+                          ),
+
+                          Divider(
+                            height: 1,
+                            thickness: 1,
+                            indent: 15,
+                            endIndent: 15,
+                            color: Colors.grey[400],
+                          ),
+
+                          Card(
+                            margin: EdgeInsets.symmetric(horizontal: 13),
+                            child: ExpansionTile(
+                              title: Text("Address",style: TextStyle(fontWeight: FontWeight.w700),),
+                              subtitle: Text("Add or remove address",style: TextStyle(color: Colors.grey[700]),),
+                              trailing: Icon(Icons.arrow_forward_ios,size: 17,),
+                            ),
+                          ),
+                          Divider(
+                            height: 1,
+                            thickness: 1,
+                            indent: 15,
+                            endIndent: 15,
+                            color: Colors.grey[400],
+                          ),
+                          Card(
+                            margin: EdgeInsets.symmetric(horizontal: 13),
+                            child: ExpansionTile(
+                              title: Text("Refers Friends",style: TextStyle(fontWeight: FontWeight.w700),),
+                              subtitle: Text(r"Get $10.00 FREE",style: TextStyle(color: Color(0xfffc0366))),
+                              trailing: Icon(Icons.arrow_forward_ios,size: 17,),
+                            ),
+                          ),
+                          Divider(
+                            height: 1,
+                            thickness: 1,
+                            indent: 15,
+                            endIndent: 15,
+                            color: Colors.grey[400],
+                          ),
+                          Card(
+                            margin: EdgeInsets.symmetric(horizontal: 13),
+                            child: ExpansionTile(
+                              leading: Icon(CupertinoIcons.question_circle_fill,color:Color(0xfffc0366) ,),
+                              title: Text("Delivery support"),
+                              trailing: Icon(Icons.arrow_forward_ios,size: 17,),
+                            ),
+                          ),
+                          Divider(
+                            height: 1,
+                            thickness: 1,
+                            indent: 15,
+                            endIndent: 15,
+                            color: Colors.grey[400],
+                          ),
+                          Card(
+                            margin: EdgeInsets.symmetric(horizontal: 13),
+                            child: ExpansionTile(
+                              leading: Icon(Icons.settings,color: Color(0xff2572f7),),
+                              title: Text("Setting",),
+                              trailing: Icon(Icons.arrow_forward_ios,size: 17,),
+
+                            ),
+                          ),
 
 
 
@@ -224,7 +302,10 @@ setState(() {
 
 
 
-    //
+
+
+
+                    //
     //
     //
     //
@@ -390,7 +471,9 @@ setState(() {
 
 
 
-
+]
+                )
+  )
 )
     );
     
