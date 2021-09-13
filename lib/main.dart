@@ -144,57 +144,73 @@ body:SingleChildScrollView(
                        height: 150,
                        width: 340,
                            child: Card(
-                             shape: RoundedRectangleBorder(
-                               borderRadius: BorderRadius.circular(8)
-                             ),
+                               elevation: 10,
+                               shape: RoundedRectangleBorder(
+                                   borderRadius: BorderRadius.circular(8)
+                               ),
+                             child:new Stack(
+                               children: <Widget>[
+                                 Positioned(
+                                     left: 16.0,
+                                     top: 20.0,
+                                     child: CircleAvatar(
 
-                                child: Stack(
-                               children: [
-                                Positioned(
-                                  left: 13.0,
-                               top: 20.0,
-                               child: CircleAvatar(
+                                       radius: 32,
+                                       backgroundImage: NetworkImage("https://www.nicepng.com/png/detail/780-7805650_generic-user-image-male-man-cartoon-no-eyes.png"),
+                                     )
+                                 ),
+                                 Column(
+                                   children: [
+                                     SizedBox(
+                                       height: 100,
+                                     ),
+                                        Divider(
+                                           height: 1,
 
-                                  radius: 32,
-                                  backgroundImage: NetworkImage("https://www.nicepng.com/png/detail/780-7805650_generic-user-image-male-man-cartoon-no-eyes.png"),
-                                )
-                                ),
+                                         )
+
+
+
+                                   ],
+                                     ),
                                  Positioned(
                                    left: 93,
-                                     top: 35,
-                                     child: Column(
-                                       children: [
-                                         Wrap(
-                                           children: [
-                                             Text("Recardo McDonald",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 16),),
-                                             Icon(Icons.check_circle,color: Colors.lightGreenAccent,)
-                                           ],
-                                         ),
+                                   top: 35,
+                                   child: Column(
+                                     children: [
+                                       Wrap(
+                                         children: [
+                                           Text("Recardo McDonald",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 16),),
+                                           Icon(Icons.check_circle,color: Colors.lightGreenAccent,)
+                                         ],
+                                       ),
 
-                                         Text("jeetebe@gmail.com        ",style: TextStyle(fontSize: 14),),
+                                       Text("jeetebe@gmail.com        ",style: TextStyle(fontSize: 14),),
 
-                                       ],
-                                     ),
+
+
+                                     ],
+                                   ),
 
                                  ),
+
                                  Positioned(
-                                   left: 16,
+                                     left: 16,
                                      top: 107,
                                      child: Row(
                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                 children: [
-                                   Text("Account credit",style: TextStyle(color: Colors.grey),),
-                                   Text( r"                              $52.25",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.deepOrangeAccent),)
-                                 ],
-                                 ))
-
-
+                                       crossAxisAlignment: CrossAxisAlignment.start,
+                                       children: [
+                                         Text("Account credit",style: TextStyle(color: Colors.grey),),
+                                         Text( r"                              $52.25",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.deepOrangeAccent),)
+                                       ],
+                                     ))
 
                                ],
+                             )
 
 
-                             ),
+
 
 
 
@@ -242,6 +258,7 @@ body:SingleChildScrollView(
                     bottom: 0,
                         right: 0,
                         child:  Card(
+                          elevation: 10,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.only(topLeft: Radius.circular(8),topRight: Radius.circular(8))
                             ),
@@ -256,13 +273,12 @@ body:SingleChildScrollView(
 
                           Divider(
                             height: 1,
-                            thickness: 1,
                             indent: 15,
                             endIndent: 15,
-                            color: Colors.grey[400],
                           ),
 
                           Card(
+                            elevation: 10,
                             margin: EdgeInsets.symmetric(horizontal: 13),
                             child: ExpansionTile(
                               title: Text("Address",style: TextStyle(fontWeight: FontWeight.w700),),
@@ -272,12 +288,11 @@ body:SingleChildScrollView(
                           ),
                           Divider(
                             height: 1,
-                            thickness: 1,
                             indent: 15,
                             endIndent: 15,
-                            color: Colors.grey[400],
                           ),
                           Card(
+                            elevation: 10,
                             margin: EdgeInsets.symmetric(horizontal: 13),
                             child: ExpansionTile(
                               title: Text("Refers Friends",style: TextStyle(fontWeight: FontWeight.w700),),
@@ -287,12 +302,11 @@ body:SingleChildScrollView(
                           ),
                           Divider(
                             height: 1,
-                            thickness: 1,
                             indent: 15,
                             endIndent: 15,
-                            color: Colors.grey[400],
                           ),
                           Card(
+                            elevation: 10,
                             margin: EdgeInsets.symmetric(horizontal: 13),
                             child: ExpansionTile(
                               leading: Icon(CupertinoIcons.question_circle_fill,color:Color(0xfffc0366) ,),
@@ -302,12 +316,11 @@ body:SingleChildScrollView(
                           ),
                           Divider(
                             height: 1,
-                            thickness: 1,
                             indent: 15,
                             endIndent: 15,
-                            color: Colors.grey[400],
                           ),
                           Card(
+                            elevation: 10,
                             margin: EdgeInsets.symmetric(horizontal: 13),
                             child: ExpansionTile(
                               leading: Icon(Icons.settings,color: Color(0xff2572f7),),
