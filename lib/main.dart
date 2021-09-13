@@ -1,5 +1,6 @@
 
 
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -114,51 +115,108 @@ setState(() {
 
   body:Container(
       height: 700,
-                child: Stack(
+                child: Container(
+                 child:   Stack(
                   alignment: Alignment.topCenter,
                    children: [
                      Container(
                        height: 170,
                        color: Color(0xfffc0366)),
+                   Padding(padding: EdgeInsets.symmetric(vertical: 40)),
                      Positioned(
-                       bottom: 0,
+                       left: 20,
+                       top: 51,
+                       child: Row(
+                           children:[
+                             Text("Profile",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 24,color: Colors.white),),
+                             Text("                                                              Edit",style: TextStyle(fontWeight: FontWeight.w700,color: Colors.white)),
+                           ]
+                       ),
+                     ),
 
+                     Positioned(
+                       top: 100.0,
                          child: Container(
-                           margin: EdgeInsets.all(30),
-                       height: 70,
-                       color: Colors.green,
-                     ))
+                       height: 150,
+                       width: 320,
+                           child: Card(
+                             shape: RoundedRectangleBorder(
+                               borderRadius: BorderRadius.circular(8)
+                             ),
+                             child: Stack(
+                               children: [
+                                Positioned(
+                                  left: 13.0,
+                               top: 20.0,
+                               child: CircleAvatar(
+
+                                  radius: 35,
+                                  backgroundImage: NetworkImage("https://www.nicepng.com/png/detail/780-7805650_generic-user-image-male-man-cartoon-no-eyes.png"),
+                                )
+                                ),
+                                 Positioned(
+                                   left: 93,
+                                     top: 35,
+                                     child: Column(
+                                       children: [
+                                         Text("  Recardo McDonald",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 16),),
+                                         Text("jeetebe@gmail.com",style: TextStyle(fontSize: 14),),
+
+                                       ],
+                                     ),
+
+                                 ),
+                                 Positioned(
+                                   left: 16,
+                                     top: 107,
+                                     child: Row(
+                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                 crossAxisAlignment: CrossAxisAlignment.start,
+                                 children: [
+                                   Text("Account credit",style: TextStyle(color: Colors.grey),),
+                                   Text( r"                              $52.25",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.deepOrangeAccent),)
+                                 ],
+                                 ))
+
+
+
+                               ],
+
+                             ),
+
+
+                           ),
+
+                     )),
+                     Positioned(
+                       top: 40.0,
+                         child: Card(
+                           child:ExpansionTile(title: Text("lifhuehfu"),
+                           subtitle: Text("whduudiu"),)
+                         )
+                     )
+
+
+
                    ],
 
+
+
                  ),
-                 // child: Column(
-                 //   mainAxisAlignment: MainAxisAlignment.center,
-                 //   children: [
-                 //     Row(
-                 //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                 //         children:[
-                 //           Text("Profile"),
-                 //           Text("Edit"),
-                 //         ]
-                 //     ),
-                 //     Stack(
-                 //       children: [
-                 //         Positioned(
-                 //             child:
-                 //         Container(
-                 //           height: 100,
-                 //           color: Colors.black,
-                 //         )
-                 //         )
-                 //       ],
-                 //
-                 //     )
-                 //
-                 //   ],
-                 // ),
+
+
+
+
+
+
+
+
+
 
 
                   ),
+
+    
 
 
 
@@ -333,37 +391,11 @@ setState(() {
 
 
 
-
+)
     );
     
   }
 }
 
-// class BNBCustomPainter extends CustomPainter {
-//   @override
-//   void paint(Canvas canvas, Size size) {
-//     Paint paint = new Paint()
-//       ..color = Colors.white
-//       ..style = PaintingStyle.fill;
-//
-//     Path path = Path();
-//     path.moveTo(10, 10); // Start
-//     path.quadraticBezierTo(size.width * 0.0, 0, size.width * 0.0, 0);
-//     path.quadraticBezierTo(size.width * 0.0, 0, size.width * 0.40, 20);
-//     path.arcToPoint(Offset(size.width * 0.20, 20), radius: Radius.circular(10.0), clockwise: false);
-//     path.quadraticBezierTo(size.width * 0.20, 20, size.width * 0.65, 0);
-//     path.quadraticBezierTo(size.width * 0.20, 0, size.width, 20);
-//     path.lineTo(size.width, size.height);
-//     path.lineTo(0, size.height);
-//     path.close();
-//     path.lineTo(0, 0);
-//     canvas.drawShadow(path, Colors.black, 5, true);
-//     canvas.drawPath(path, paint);
-//   }
-//
-//   @override
-//   bool shouldRepaint(CustomPainter oldDelegate) {
-//     return false;
-//   }
-// }
+
 
