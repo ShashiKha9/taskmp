@@ -275,6 +275,7 @@ body:SingleChildScrollView(
                             height: 1,
                             indent: 15,
                             endIndent: 15,
+                            color: Colors.grey[200],
                           ),
 
                           Card(
@@ -290,6 +291,8 @@ body:SingleChildScrollView(
                             height: 1,
                             indent: 15,
                             endIndent: 15,
+                            color: Colors.grey[200],
+
                           ),
                           Card(
                             elevation: 10,
@@ -304,6 +307,8 @@ body:SingleChildScrollView(
                             height: 1,
                             indent: 15,
                             endIndent: 15,
+                            color: Colors.grey[200],
+
                           ),
                           Card(
                             elevation: 10,
@@ -318,6 +323,8 @@ body:SingleChildScrollView(
                             height: 1,
                             indent: 15,
                             endIndent: 15,
+                            color: Colors.grey[200],
+
                           ),
                           Card(
                             elevation: 10,
@@ -336,172 +343,6 @@ body:SingleChildScrollView(
 
 
 
-
-
-
-                    //
-    //
-    //
-    //
-    //
-    //       SizedBox(
-    //         height: 18,
-    //       ),
-    //       Positioned(
-    // bottom: 0,
-    //     right: 0,
-    //     child:  Card(
-    //         shape: RoundedRectangleBorder(
-    //             borderRadius: BorderRadius.only(topLeft: Radius.circular(8),topRight: Radius.circular(8))
-    //         ),
-    //         margin: EdgeInsets.symmetric(horizontal: 13),
-    //         child: ExpansionTile(
-    //           title: Text("Payment cards",style: TextStyle(fontWeight: FontWeight.w700),),
-    //           subtitle: Text("Add a credit or debit card",style: TextStyle(color: Colors.grey[700]),),
-    //           trailing: Icon(Icons.arrow_forward_ios,size: 17,),
-    //         ),
-    //       ),
-    //       ),
-    //
-    //       Divider(
-    //         height: 1,
-    //         thickness: 1,
-    //         indent: 15,
-    //         endIndent: 15,
-    //         color: Colors.grey[400],
-    //       ),
-    //
-    //       Card(
-    //         margin: EdgeInsets.symmetric(horizontal: 13),
-    //         child: ExpansionTile(
-    //           title: Text("Address",style: TextStyle(fontWeight: FontWeight.w700),),
-    //           subtitle: Text("Add or remove address",style: TextStyle(color: Colors.grey[700]),),
-    //           trailing: Icon(Icons.arrow_forward_ios,size: 17,),
-    //         ),
-    //       ),
-    //       Divider(
-    //         height: 1,
-    //         thickness: 1,
-    //         indent: 15,
-    //         endIndent: 15,
-    //         color: Colors.grey[400],
-    //       ),
-    //       Card(
-    //         margin: EdgeInsets.symmetric(horizontal: 13),
-    //         child: ExpansionTile(
-    //           title: Text("Refers Friends",style: TextStyle(fontWeight: FontWeight.w700),),
-    //           subtitle: Text(r"Get $10.00 FREE",style: TextStyle(color: Color(0xfffc0366))),
-    //           trailing: Icon(Icons.arrow_forward_ios,size: 17,),
-    //         ),
-    //       ),
-    //       Divider(
-    //         height: 1,
-    //         thickness: 1,
-    //         indent: 15,
-    //         endIndent: 15,
-    //         color: Colors.grey[400],
-    //       ),
-    //       Card(
-    //         margin: EdgeInsets.symmetric(horizontal: 13),
-    //         child: ExpansionTile(
-    //           leading: Icon(CupertinoIcons.question_circle_fill,color:Color(0xfffc0366) ,),
-    //           title: Text("Delivery support"),
-    //           trailing: Icon(Icons.arrow_forward_ios,size: 17,),
-    //         ),
-    //       ),
-    //       Divider(
-    //         height: 1,
-    //         thickness: 1,
-    //         indent: 15,
-    //         endIndent: 15,
-    //         color: Colors.grey[400],
-    //       ),
-    //       Card(
-    //         margin: EdgeInsets.symmetric(horizontal: 13),
-    //         child: ExpansionTile(
-    //           leading: Icon(Icons.settings,color: Color(0xff2572f7),),
-    //           title: Text("Setting",),
-    //           trailing: Icon(Icons.arrow_forward_ios,size: 17,),
-    //
-    //         ),
-    //       ),
-
-
-
-
-       // Stack(
-       //      children: [
-       //        Positioned(
-       //          bottom: 0,
-       //          left: 0,
-       //          child: Container(
-       //            width: size.width,
-       //            height: 65,
-       //            child: Stack(
-       //              overflow: Overflow.visible,
-       //              children: [
-       //                CustomPaint(
-       //                  size: Size(size.width, 80),
-       //                  painter: BNBCustomPainter(),
-       //                ),
-       //                Center(
-       //                  heightFactor: 0.6,
-       //                  child: FloatingActionButton(backgroundColor: Colors.red, child: Icon(Icons.shopping_basket), elevation: 0.1, onPressed: () {}),
-       //                ),
-       //                Container(
-       //                  width: size.width,
-       //                  height: 80,
-       //                  child: Row(
-       //                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-       //                    children: [
-       //                      IconButton(
-       //                        icon: Icon(
-       //                          Icons.home,
-       //                          color: currentIndex == 0 ? Colors.red : Colors.grey.shade400,
-       //                        ),
-       //
-       //                        onPressed: () {
-       //                          setBottomBarIndex(0);
-       //                        },
-       //                        splashColor: Colors.white,
-       //                      ),
-       //                      IconButton(
-       //                          icon: Icon(
-       //                            Icons.restaurant_menu,
-       //                            color: currentIndex == 1 ? Colors.red : Colors.grey.shade400,
-       //
-       //                          ),
-       //                          onPressed: () {
-       //                            setBottomBarIndex(1);
-       //                          }),
-       //                      Container(
-       //                        width: size.width * 0.20,
-       //                      ),
-       //                      IconButton(
-       //                          icon: Icon(
-       //                            Icons.bookmark,
-       //                            color: currentIndex == 2 ? Colors.red : Colors.grey.shade400,
-       //                          ),
-       //                          onPressed: () {
-       //                            setBottomBarIndex(2);
-       //                          }),
-       //                      IconButton(
-       //                          icon: Icon(
-       //                            Icons.notifications,
-       //                            color: currentIndex == 3 ? Colors.red : Colors.grey.shade400,
-       //                          ),
-       //                          onPressed: () {
-       //                            setBottomBarIndex(3);
-       //                          }),
-       //                    ],
-       //                  ),
-       //                )
-       //              ],
-       //            ),
-       //          ),
-       //        )
-       //      ],
-       //    )
 
 
 
